@@ -47,13 +47,13 @@ Vue.createApp({
             }
         },
         addElement() {
-            console.log("ciao");
             const listClone = { ...this.newElementList };
             this.toDoList.push(listClone);
+            this.newElementList.text = "";
         },
         deleteElement(i) {
             this.toDoList.splice(i, 1)
-        }
+        },
     },
     mounted() {
 
