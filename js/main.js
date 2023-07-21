@@ -42,6 +42,9 @@ Vue.createApp({
                 element.done = true;
             }
         },
+        deleteElement(i){
+            this.toDoList.splice(i,1)
+        }
     },
     mounted() {
 

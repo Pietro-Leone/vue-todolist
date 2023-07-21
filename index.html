@@ -21,22 +21,22 @@
 
         <div class="main-container m-auto my-5">
             <div>
-                <h1 class="text-center">To do List</h1>
+                <h1 class="text-center display-1 fw-bold text-white">To do List</h1>
             </div>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Scrivi cosa vuoi fare"
                     aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn bg-white border" type="button"><i class="fa-solid fa-square-plus"></i></button>
             </div>
-            <div class="card">
+            <div class="card" v-if="(toDoList.length > 0)">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item d-flex justify-content-between" v-for="(element, i) in toDoList">
                         <div>
-                            <i class="fa-solid fa-check pointer" @click="lineThrough(element)"></i>
+                            <button type="button" class="btn"><i class="fa-solid fa-check" @click="lineThrough(element)"></i></button>
                             <span :class="(element.done === true ? 'text-decoration-line-through' : '')"
                                 class="ps-2">{{element.text}}</span>
                         </div>
-                        <button type="button" class="btn-close" aria-label="Close"></button>
+                        <button type="button" class="btn-close" aria-label="Close" @click="deleteElement(i)"></button>
                     </li>
                 </ul>
             </div>
