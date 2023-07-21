@@ -31,6 +31,10 @@ Vue.createApp({
                     done: false,
                 },
             ],
+            newElementList: {
+                text: "",
+                done: false,
+            },
         };
     },
     methods: {
@@ -42,8 +46,13 @@ Vue.createApp({
                 element.done = true;
             }
         },
-        deleteElement(i){
-            this.toDoList.splice(i,1)
+        addElement() {
+            console.log("ciao");
+            const listClone = { ...this.newElementList };
+            this.toDoList.push(listClone);
+        },
+        deleteElement(i) {
+            this.toDoList.splice(i, 1)
         }
     },
     mounted() {
