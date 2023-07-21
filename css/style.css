@@ -5,3 +5,17 @@
     margin: 0;
     padding: 0;
 }
+
+body{
+    background-image: url("../img/wood-background.png");
+}
+
+.main-container {
+    max-width: 900px;
+    width: 100%;
+    
+}
+
+.pointer{
+    cursor: pointer;
+}

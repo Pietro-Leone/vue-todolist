@@ -34,7 +34,14 @@ Vue.createApp({
         };
     },
     methods: {
-
+        lineThrough(element) {
+            if (element.done === true) {
+                element.done = false;
+            }
+            else {
+                element.done = true;
+            }
+        },
     },
     mounted() {
 
